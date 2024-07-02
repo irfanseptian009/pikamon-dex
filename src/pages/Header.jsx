@@ -24,7 +24,6 @@ const NavBar = () => {
         </div>
         <div className="flex space-x-4">
           {" "}
-          {/* Tautan dan search bar */}
           <Link
             to="/Favorite"
             className="bg-white px-4 py-2 rounded-md text-blue-500 hover:bg-blue-700 hover:text-white transition duration-300"

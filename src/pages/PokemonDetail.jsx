@@ -66,8 +66,6 @@ function PokemonDetail() {
           </ul>
         </div>
       </div>
-
-      {/* ... (Tampilkan detail lainnya sesuai kebutuhan) */}
     </div>
   );
 }
