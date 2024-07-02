@@ -8,7 +8,7 @@ function SearchResult() {
 
   return (
     <div className="search-result">
-      {pokemonData ? ( // Render PokemonCard hanya jika pokemonData ada
+      {pokemonData ? (
         <PokemonCard pokemon={pokemonData} />
       ) : (
         <p>Tidak ada hasil pencarian atau masih loading.</p> // Pesan loading atau error

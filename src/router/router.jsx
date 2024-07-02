@@ -4,15 +4,15 @@ import { createBrowserRouter } from "react-router-dom";
 import PokemonList from "../components/PokemonList";
 import PokemonDetail from "../pages/PokemonDetail";
 import NotFound from "../pages/NotFound";
-import SearchBar from "../components/SearchBar";
 import SearchResult from "./../pages/SearchResult";
+import Header from "./../pages/Header";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
       <>
-        <SearchBar />
+        <Header />
         <PokemonList />
       </>
     ),

@@ -9,7 +9,7 @@ function SearchBar() {
   const handleSearch = async () => {
     try {
       const data = await getPokemonByName(searchTerm.toLowerCase());
-      navigate(`/result`, { state: { pokemon: data } }); // Navigate dan kirim data Pokemon
+      navigate(`/result`, { state: { pokemon: data } });
     } catch (error) {
       console.error("Error fetching Pokemon data:", error);
       navigate("/notfound");
@@ -17,13 +17,21 @@ function SearchBar() {
   };
 
   return (
-    <div className="search-bar">
+    <div className="relative">
+      {" "}
       <input
         type="text"
+        placeholder="Cari Pokemon..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
+        className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
-      <button onClick={handleSearch}>Cari</button>
+      <button
+        onClick={handleSearch}
+        className="absolute top-1.5 right-2 bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-3 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 "
+      >
+        Cari
+      </button>
     </div>
   );
 }
