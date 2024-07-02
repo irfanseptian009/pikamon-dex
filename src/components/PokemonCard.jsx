@@ -9,9 +9,14 @@ function PokemonCard({ pokemon }) {
   const name = pokemon.name || "Unknown";
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-4">
+    <div className="bg-white rounded-lg shadow-md p-4 fle">
       <img src={imageUrl} alt={name} className="w-full h-40 object-contain" />
-      <h3 className="text-lg font-medium mt-2">{name}</h3>
+      <div className="flex justify-between">
+        <h3 className="text-lg font-medium mt-2">{name}</h3>
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md">
+          Details
+        </button>
+      </div>
     </div>
   );
 }
