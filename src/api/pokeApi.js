@@ -5,7 +5,9 @@ const pokeApi = axios.create({
 });
 
 export const getPokemonList = async (limit = 20, offset = 0) => {
-  const response = await pokeApi.get("pokemon", { params: { limit, offset } });
+  const response = await pokeApi.get("pokemon", {
+    params: { limit, offset },
+  });
   return response.data;
 };
 
