@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function FavoriteCard({ pokemon, onDeleteFavorite }) {
   const navigate = useNavigate();
@@ -33,6 +34,11 @@ function FavoriteCard({ pokemon, onDeleteFavorite }) {
   const handleDeleteClick = async () => {
     if (window.confirm(`Hapus ${pokemon.name} dari daftar favorit?`)) {
       onDeleteFavorite(pokemon);
+      try {
+        await axios.delete(`http://localhost:3000/favorites/${pokemon.id}`);
+      } catch (error) {
+        console.error("Error deleting favorite:", error);
+      }
     }
   };
 

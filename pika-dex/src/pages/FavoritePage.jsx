@@ -28,7 +28,6 @@ function FavoritePage() {
 
   const handleDeleteFavorite = async (deletedPokemon) => {
     try {
-      // Optimistically update the state first
       setFavorites((prevFavorites) =>
         prevFavorites.filter((fav) => fav.name !== deletedPokemon.name)
       );
@@ -68,7 +67,7 @@ function FavoritePage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {favorites.map((pokemon) => (
             <FavoriteCard
-              key={pokemon.name}
+              key={pokemon.id} // Menggunakan ID sebagai key
               pokemon={pokemon}
               onDeleteFavorite={handleDeleteFavorite}
             />

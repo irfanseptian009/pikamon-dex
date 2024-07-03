@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { getPokemonByName } from "../api/pokeApi";
+import { getPokemonByName } from "../api/pokeApi.js";
 
 function PokemonDetail() {
   const location = useLocation();

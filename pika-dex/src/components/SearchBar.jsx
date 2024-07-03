@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getPokemonByName } from "../api/pokeApi";
+import { getPokemonByName } from "../api/pokeApi.js";
 
 function SearchBar() {
   const navigate = useNavigate();
