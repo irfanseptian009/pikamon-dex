@@ -4,7 +4,7 @@ import axios from "axios";
 
 function PokemonCard({ pokemon, isFavorite, onToggleFavorite }) {
   const navigate = useNavigate();
-  const [imageUrl, setImageUrl] = useState(pokemon.sprites?.front_default); // Initialize from sprites
+  const [imageUrl, setImageUrl] = useState(pokemon.sprites?.front_default);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
 
@@ -12,7 +12,6 @@ function PokemonCard({ pokemon, isFavorite, onToggleFavorite }) {
     const fetchImage = async () => {
       try {
         if (!imageUrl) {
-          // If no imageUrl yet, fetch it
           const response = await fetch(pokemon.url);
           const data = await response.json();
           setImageUrl(data.sprites.front_default);

@@ -4,7 +4,7 @@ import PokemonCard from "./PokemonCard";
 
 function PokemonList() {
   const [pokemonData, setPokemonData] = useState([]);
-  const [isFavorite, setIsFavorite] = useState({}); // Objek untuk menyimpan status favorit per Pokemon
+  const [isFavorite, setIsFavorite] = useState({});
 
   const handleToggleFavorite = (pokemonName) => {
     setIsFavorite((prevFavorites) => ({
@@ -23,7 +23,7 @@ function PokemonList() {
         <PokemonCard
           key={pokemon.name}
           pokemon={pokemon}
-          isFavorite={isFavorite[pokemon.name] || false} // Default ke false jika belum ada
+          isFavorite={isFavorite[pokemon.name] || false}
           onToggleFavorite={handleToggleFavorite}
         />
       ))}

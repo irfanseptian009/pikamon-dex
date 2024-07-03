@@ -11,7 +11,7 @@ export const getPokemonList = async (limit = 20, offset = 0) => {
     });
     return response.data;
   } catch (error) {
-    throw new Error(`Error fetching Pokemon list: ${error.message}`); // Melempar error dengan pesan yang lebih informatif
+    throw new Error(`Error fetching Pokemon list: ${error.message}`);
   }
 };
 
@@ -20,6 +20,6 @@ export const getPokemonByName = async (name) => {
     const response = await pokeApi.get(`pokemon/${name}`);
     return response.data;
   } catch (error) {
-    throw new Error(`Error fetching Pokemon details for ${name}: ${error.message}`); // Melempar error dengan pesan yang lebih informatif
+    throw new Error(`Error fetching Pokemon details for ${name}: ${error.message}`);
   }
 };

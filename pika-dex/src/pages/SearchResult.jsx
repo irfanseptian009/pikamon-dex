@@ -11,7 +11,7 @@ function SearchResult() {
       {pokemonData ? (
         <PokemonCard pokemon={pokemonData} />
       ) : (
-        <p>Tidak ada hasil pencarian atau masih loading.</p> // Pesan loading atau error
+        <p>Tidak ada hasil pencarian atau masih loading.</p>
       )}
     </div>
   );

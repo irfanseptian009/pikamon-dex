@@ -35,13 +35,9 @@ function FavoritePage() {
       const response = await axios.delete(
         `http://localhost:3000/favorites/${encodeURIComponent(deletedPokemon.name)}`
       );
-
-      if (response.status !== 200) {
-        throw new Error("Failed to delete favorite from server.");
-      }
     } catch (error) {
       console.error("Error deleting favorite:", error);
-      setError("Terjadi kesalahan saat menghapus Pokemon favorit.");
+      setError("");
 
       fetchFavorites();
     }
@@ -67,7 +63,7 @@ function FavoritePage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {favorites.map((pokemon) => (
             <FavoriteCard
-              key={pokemon.id} // Menggunakan ID sebagai key
+              key={pokemon.id}
               pokemon={pokemon}
               onDeleteFavorite={handleDeleteFavorite}
             />
