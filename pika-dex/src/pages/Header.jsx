@@ -25,7 +25,7 @@ const NavBar = () => {
         <div className="flex space-x-4">
           {" "}
           <Link
-            to="/Favorite"
+            to="/Favorites"
             className="bg-white px-4 py-2 rounded-md text-blue-500 hover:bg-blue-700 hover:text-white transition duration-300"
           >
             Favorite

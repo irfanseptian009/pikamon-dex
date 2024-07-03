@@ -4,8 +4,9 @@ import { createBrowserRouter } from "react-router-dom";
 import PokemonList from "../components/PokemonList";
 import PokemonDetail from "../pages/PokemonDetail";
 import NotFound from "../pages/NotFound";
-import SearchResult from "./../pages/SearchResult";
-import Header from "./../pages/Header";
+import SearchResult from "../pages/SearchResult";
+import Header from "../pages/Header";
+import FavoritePage from "../pages/FavoritePage";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
   {
     path: "/result",
     element: <SearchResult />,
+  },
+  {
+    path: "/favorites",
+    element: <FavoritePage />,
   },
 ]);
 
