@@ -1,9 +1,44 @@
 {
   "favorites": [
     {
-      "id": "ee56",
+      "id": "2e66",
+      "name": "butterfree",
+      "url": "https://pokeapi.co/api/v2/pokemon/12/"
+    },
+    {
+      "id": "fd1f",
+      "name": "blastoise",
+      "url": "https://pokeapi.co/api/v2/pokemon/9/"
+    },
+    {
+      "id": "c587",
+      "name": "ivysaur",
+      "url": "https://pokeapi.co/api/v2/pokemon/2/"
+    },
+    {
+      "id": "46fd",
+      "name": "venusaur",
+      "url": "https://pokeapi.co/api/v2/pokemon/3/"
+    },
+    {
+      "id": "5570",
+      "name": "bulbasaur",
+      "url": "https://pokeapi.co/api/v2/pokemon/1/"
+    },
+    {
+      "id": "685d",
+      "name": "charmeleon",
+      "url": "https://pokeapi.co/api/v2/pokemon/5/"
+    },
+    {
+      "id": "d6aa",
       "name": "charizard",
       "url": "https://pokeapi.co/api/v2/pokemon/6/"
+    },
+    {
+      "id": "23c4",
+      "name": "ivysaur",
+      "url": "https://pokeapi.co/api/v2/pokemon/2/"
     }
   ]
 }
