@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
+import { MdOutlineCatchingPokemon } from "react-icons/md";
 
 function PokemonCard({ pokemon, isFavorite, onToggleFavorite }) {
   const navigate = useNavigate();
@@ -41,7 +42,8 @@ function PokemonCard({ pokemon, isFavorite, onToggleFavorite }) {
         <div>Loading...</div>
       ) : (
         <>
-          <div className="w-full h-3/5 flex items-center justify-center">
+          <p className="text-gray-600 mr-48">#{pokemonData.id}</p>
+          <div className="w-full h-3/5 flex items-center justify-center -mt-11 ">
             <img
               src={pokemonData.sprites.front_default}
               alt={pokemon.name}
@@ -85,10 +87,9 @@ function PokemonCard({ pokemon, isFavorite, onToggleFavorite }) {
             >
               <button
                 onClick={handleDetailClick}
-                className="button text-white font-semibold py-1 px-4 rounded-md"
-                style={{ background: "rgb(90, 64, 145)" }}
+                className="button text-white font-semibold p-2.5 rounded-full bg-yellow-600"
               >
-                Details
+                <MdOutlineCatchingPokemon />
               </button>
               <button
                 onClick={handleFavoriteClick}

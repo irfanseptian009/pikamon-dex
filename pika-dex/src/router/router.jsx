@@ -1,4 +1,3 @@
-// router.jsx
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import PokemonList from "../components/PokemonList";

@@ -56,7 +56,7 @@ function FavoritePage() {
   return (
     <div className="container mx-auto p-4">
       <Link to="/">
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md mt-2 flex">
+        <button className="bg-blue-900 hover:bg-blue-700 text-white font-semibold py-1 px-2 rounded-md mb-3 flex">
           <IoIosHome className="w-5 h-5" /> <p>Back Home</p>
         </button>
       </Link>
