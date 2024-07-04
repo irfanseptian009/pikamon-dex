@@ -48,12 +48,9 @@ function PokemonCard({ pokemon, isFavorite, onToggleFavorite }) {
         }
     };
 
-    // rounded-lg shadow-md p-4 flex flex-col items-center
-    // m-16 flex flex-col items-center justify-center rounded-lg gap-14
-
     return (
         <div
-            className="m-6 mx-auto p-5 rounded-3xl shadow-2xl flex flex-col items-center gap-2"
+            className="card m-6 mx-auto p-5 rounded-3xl shadow-2xl flex flex-col items-center gap-2"
             style={{
                 background: "rgb(239, 239, 237)",
                 width: "260px",
@@ -71,7 +68,6 @@ function PokemonCard({ pokemon, isFavorite, onToggleFavorite }) {
                         src={imageUrl}
                         alt={pokemon.name}
                         className="h-full"
-                        //w-36 h-36 object-contain mb-2
                     />
                 </div>
             )}
@@ -125,7 +121,7 @@ function PokemonCard({ pokemon, isFavorite, onToggleFavorite }) {
                             borderRadius: "50%",
                             padding: "10px",
                         }}
-                        className={`text-lg font-black py-2 px-4 rounded-md ${
+                        className={`btnFav text-lg font-black py-2 px-4 rounded-md ${
                             isFavorite ? "text-red-500" : "text-purple-600"
                         }`}
                         disabled={isLoading}

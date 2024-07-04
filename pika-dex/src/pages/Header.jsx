@@ -16,7 +16,6 @@ const NavBar = () => {
   return (
     <nav className="p-6 rounded-lg mb-5" style={{background:"rgb(90, 64, 145)"}}>
       {" "}
-      {/* Gradient background */}
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
         <div className="flex items-center mb-4 md:mb-0">
           {" "}
