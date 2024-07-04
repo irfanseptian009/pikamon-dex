@@ -10,8 +10,11 @@ const NavBar = () => {
     setSearchTerm(term);
   };
 
+  // 
+
+
   return (
-    <nav className="bg-gradient-to-r from-red-500 to-yellow-500 p-4 rounded-lg mb-5">
+    <nav className="p-6 rounded-lg mb-5" style={{background:"rgb(90, 64, 145)"}}>
       {" "}
       {/* Gradient background */}
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
@@ -26,13 +29,15 @@ const NavBar = () => {
           {" "}
           <Link
             to="/Favorites"
-            className="bg-white px-4 py-2 rounded-md text-blue-500 hover:bg-blue-700 hover:text-white transition duration-300"
+            className="buttonNav bg-white px-4 py-2 rounded-md"
+            style={{color:"rgb(90, 64, 145)"}}
           >
             Favorite
           </Link>
           <Link
             to="/contact"
-            className="bg-white px-4 py-2 rounded-md text-blue-500 hover:bg-blue-700 hover:text-white transition duration-300"
+            className="buttonNav bg-white px-4 py-2 rounded-md text-blue-500 hover:bg-blue-700 hover:text-white transition duration-300"
+            style={{color:"rgb(90, 64, 145)"}}
           >
             Contact
           </Link>

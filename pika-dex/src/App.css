@@ -1,0 +1,11 @@
+.button:hover {
+    background-color: #320F7A !important;
+    transition-duration: 300;
+}
+
+.buttonNav:hover {
+    background-color: #b99cf3 !important;
+    color: #fff !important;
+    transition-duration: 300;
+}
+
