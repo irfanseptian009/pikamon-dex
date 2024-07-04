@@ -7,6 +7,8 @@ import NotFound from "../pages/NotFound";
 import SearchResult from "../pages/SearchResult";
 import Header from "../pages/Header";
 import FavoritePage from "../pages/FavoritePage";
+import Contact from "./../pages/Contact";
+import Footer from "./../pages/Footer";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +17,7 @@ const router = createBrowserRouter([
       <>
         <Header />
         <PokemonList />
+        <Footer />
       </>
     ),
   },
@@ -25,7 +28,7 @@ const router = createBrowserRouter([
         <Header />
         <PokemonDetail />
       </>
-    )
+    ),
   },
   {
     path: "*",
@@ -38,6 +41,10 @@ const router = createBrowserRouter([
   {
     path: "/favorites",
     element: <FavoritePage />,
+  },
+  {
+    path: "/contact",
+    element: <Contact />,
   },
 ]);
 

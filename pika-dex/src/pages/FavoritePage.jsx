@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import FavoriteCard from "../components/FavoriteCard";
+import { IoIosHome } from "react-icons/io";
 
 function FavoritePage() {
   const [favorites, setFavorites] = useState([]);
@@ -30,7 +31,7 @@ function FavoritePage() {
   const handleDeleteFavorite = async (deletedPokemon) => {
     try {
       setFavorites((prevFavorites) =>
-        prevFavorites.filter((fav) => fav.name!== deletedPokemon.name)
+        prevFavorites.filter((fav) => fav.name !== deletedPokemon.name)
       );
 
       const response = await axios.delete(
@@ -55,8 +56,8 @@ function FavoritePage() {
   return (
     <div className="container mx-auto p-4">
       <Link to="/">
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md mt-2">
-          Back to Home
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md mt-2 flex">
+          <IoIosHome className="w-5 h-5" /> <p>Back Home</p>
         </button>
       </Link>
 
@@ -72,10 +73,12 @@ function FavoritePage() {
         className="w-full p-2 pl-10 text-sm text-gray-700"
       />
 
-      {isLoading? (
+      {isLoading ? (
         <p className="text-center text-gray-500">Loading...</p>
-      ) : filteredFavorites.length === 0? (
-        <p className="text-center text-gray-500">Belum ada Pokemon favorit yang sesuai dengan pencarian.</p>
+      ) : filteredFavorites.length === 0 ? (
+        <p className="text-center text-gray-500">
+          Belum ada Pokemon favorit yang sesuai dengan pencarian.
+        </p>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {filteredFavorites.map((pokemon) => (

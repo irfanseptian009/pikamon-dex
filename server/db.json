@@ -1,23 +1,5 @@
 {
-<<<<<<< HEAD
-  "favorites": []
-=======
   "favorites": [
-    {
-      "id": "2e66",
-      "name": "butterfree",
-      "url": "https://pokeapi.co/api/v2/pokemon/12/"
-    },
-    {
-      "id": "fd1f",
-      "name": "blastoise",
-      "url": "https://pokeapi.co/api/v2/pokemon/9/"
-    },
-    {
-      "id": "c587",
-      "name": "ivysaur",
-      "url": "https://pokeapi.co/api/v2/pokemon/2/"
-    },
     {
       "id": "46fd",
       "name": "venusaur",
@@ -44,5 +26,4 @@
       "url": "https://pokeapi.co/api/v2/pokemon/2/"
     }
   ]
->>>>>>> a5c72fa83608424e60e9616e4b268ce1d55cfcf9
 }
