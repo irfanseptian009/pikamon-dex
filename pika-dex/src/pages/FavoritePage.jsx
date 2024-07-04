@@ -7,6 +7,7 @@ function FavoritePage() {
   const [favorites, setFavorites] = useState([]);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState(""); // Add a search term state
 
   useEffect(() => {
     const fetchFavorites = async () => {
@@ -29,7 +30,7 @@ function FavoritePage() {
   const handleDeleteFavorite = async (deletedPokemon) => {
     try {
       setFavorites((prevFavorites) =>
-        prevFavorites.filter((fav) => fav.name !== deletedPokemon.name)
+        prevFavorites.filter((fav) => fav.name!== deletedPokemon.name)
       );
 
       const response = await axios.delete(
@@ -43,6 +44,14 @@ function FavoritePage() {
     }
   };
 
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const filteredFavorites = favorites.filter((pokemon) =>
+    pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className="container mx-auto p-4">
       <Link to="/">
@@ -55,13 +64,21 @@ function FavoritePage() {
 
       {error && <p className="text-red-500 mb-4">{error}</p>}
 
-      {isLoading ? (
+      <input
+        type="search"
+        value={searchTerm}
+        onChange={handleSearch}
+        placeholder="Cari Pokemon favorit..."
+        className="w-full p-2 pl-10 text-sm text-gray-700"
+      />
+
+      {isLoading? (
         <p className="text-center text-gray-500">Loading...</p>
-      ) : favorites.length === 0 ? (
-        <p className="text-center text-gray-500">Belum ada Pokemon favorit.</p>
+      ) : filteredFavorites.length === 0? (
+        <p className="text-center text-gray-500">Belum ada Pokemon favorit yang sesuai dengan pencarian.</p>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {favorites.map((pokemon) => (
+          {filteredFavorites.map((pokemon) => (
             <FavoriteCard
               key={pokemon.id}
               pokemon={pokemon}
