@@ -1,9 +1,14 @@
 {
   "favorites": [
     {
-      "id": "46fd",
-      "name": "venusaur",
-      "url": "https://pokeapi.co/api/v2/pokemon/3/"
+      "id": "3974",
+      "name": "bulbasaur",
+      "sprites": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+    },
+    {
+      "id": "1122",
+      "name": "ivysaur",
+      "sprites": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png"
     }
   ]
 }

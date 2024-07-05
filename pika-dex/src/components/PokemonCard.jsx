@@ -1,20 +1,31 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
 import { MdOutlineCatchingPokemon } from "react-icons/md";
 
 function PokemonCard({ pokemon, isFavorite, onToggleFavorite }) {
   const navigate = useNavigate();
   const [pokemonData, setPokemonData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchPokemonData = async () => {
+      setIsLoading(true);
       try {
         const response = await fetch(pokemon.url);
+        if (!response.ok) {
+          throw new Error("Network response was not ok.");
+        }
         const data = await response.json();
         setPokemonData(data);
+        setError(null);
       } catch (error) {
         console.error("Error fetching pokemon data:", error);
+        setError("Failed to load Pokemon details.");
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -25,8 +36,23 @@ function PokemonCard({ pokemon, isFavorite, onToggleFavorite }) {
     navigate(`/detail/${pokemon.name}`, { state: { pokemon } });
   };
 
-  const handleFavoriteClick = () => {
-    onToggleFavorite(pokemon);
+  const handleFavoriteClick = async () => {
+    try {
+      if (isFavorite) {
+        // Remove from favorites
+        await axios.delete(`http://localhost:3000/favorites/${pokemon.id}`);
+      } else {
+        await axios.post("http://localhost:3000/favorites", {
+          id: pokemon.id,
+          name: pokemon.name,
+          sprites: pokemonData.sprites.front_default,
+        });
+      }
+      onToggleFavorite(pokemon);
+    } catch (error) {
+      console.error("Error updating favorite:", error);
+      setError("Failed to update favorite status.");
+    }
   };
 
   return (
@@ -38,12 +64,13 @@ function PokemonCard({ pokemon, isFavorite, onToggleFavorite }) {
         boxShadow: "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0",
       }}
     >
-      {!pokemonData ? (
-        <div>Loading...</div>
+      {isLoading ? (
+        <div className="animate-spin rounded-full h-20 w-20 border-t-2 border-b-2 border-blue-500"></div>
+      ) : error ? (
+        <div className="text-red-500">{error}</div>
       ) : (
         <>
-
-          <div className="w-full h-3/5 flex items-center justify-center mt-2 ">
+          <div className="w-full h-3/5 flex items-center justify-center mt-2">
             <img
               src={pokemonData.sprites.front_default}
               alt={pokemon.name}
@@ -52,7 +79,12 @@ function PokemonCard({ pokemon, isFavorite, onToggleFavorite }) {
           </div>
 
           <div>
-            <p className="text-md text-center font-medium" style={{color: "rgb(170, 131, 87)"}}>#{pokemonData.id}</p>
+            <p
+              className="text-md text-center font-medium"
+              style={{ color: "rgb(170, 131, 87)" }}
+            >
+              #{pokemonData.id}
+            </p>
             <h2 className="text-lg text-center font-bold text-black-500">
               {pokemon.name}
             </h2>
