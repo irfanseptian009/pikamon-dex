@@ -4,26 +4,6 @@
       "id": "46fd",
       "name": "venusaur",
       "url": "https://pokeapi.co/api/v2/pokemon/3/"
-    },
-    {
-      "id": "5570",
-      "name": "bulbasaur",
-      "url": "https://pokeapi.co/api/v2/pokemon/1/"
-    },
-    {
-      "id": "685d",
-      "name": "charmeleon",
-      "url": "https://pokeapi.co/api/v2/pokemon/5/"
-    },
-    {
-      "id": "d6aa",
-      "name": "charizard",
-      "url": "https://pokeapi.co/api/v2/pokemon/6/"
-    },
-    {
-      "id": "23c4",
-      "name": "ivysaur",
-      "url": "https://pokeapi.co/api/v2/pokemon/2/"
     }
   ]
 }

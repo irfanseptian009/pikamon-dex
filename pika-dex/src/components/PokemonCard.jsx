@@ -42,8 +42,8 @@ function PokemonCard({ pokemon, isFavorite, onToggleFavorite }) {
         <div>Loading...</div>
       ) : (
         <>
-          <p className="text-gray-600 mr-48">#{pokemonData.id}</p>
-          <div className="w-full h-3/5 flex items-center justify-center -mt-11 ">
+
+          <div className="w-full h-3/5 flex items-center justify-center mt-2 ">
             <img
               src={pokemonData.sprites.front_default}
               alt={pokemon.name}
@@ -52,6 +52,7 @@ function PokemonCard({ pokemon, isFavorite, onToggleFavorite }) {
           </div>
 
           <div>
+            <p className="text-md text-center font-medium" style={{color: "rgb(170, 131, 87)"}}>#{pokemonData.id}</p>
             <h2 className="text-lg text-center font-bold text-black-500">
               {pokemon.name}
             </h2>
