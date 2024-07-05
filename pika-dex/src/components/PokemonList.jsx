@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getPokemonList } from "../api/pokeApi.js";
 import PokemonCard from "./PokemonCard";
+import { FcPrevious, FcNext } from "react-icons/fc";
 
 function PokemonList() {
   const [pokemonData, setPokemonData] = useState([]);
@@ -47,7 +48,7 @@ function PokemonList() {
           disabled={currentPage === 1}
           className="px-4 py-2 rounded-md bg-blue-900 text-white hover:bg-blue-600 disabled:bg-gray-300 disabled:cursor-not-allowed"
         >
-          Previous
+          <FcPrevious />
         </button>
 
         <span className="px-4 py-2 rounded-md bg-gray-200 text-gray-800">
@@ -59,7 +60,7 @@ function PokemonList() {
           disabled={currentPage === totalPages}
           className="px-4 py-2 rounded-md bg-blue-900 text-white hover:bg-blue-600 disabled:bg-gray-300 disabled:cursor-not-allowed"
         >
-          Next
+          <FcNext />
         </button>
       </div>
     </div>

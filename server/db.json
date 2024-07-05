@@ -6,11 +6,6 @@
       "sprites": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
     },
     {
-      "id": "6bdb",
-      "name": "bulbasaur",
-      "sprites": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
-    },
-    {
       "id": "63e8",
       "name": "charmander",
       "sprites": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"
