@@ -10,6 +10,7 @@ function FavoriteCard({ pokemon, onDeleteFavorite }) {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
 
+  // Navigate to Detail Page
   const handleDetailClick = () => {
     navigate(`/detail/${pokemon.name}`, { state: { pokemon } });
   };
