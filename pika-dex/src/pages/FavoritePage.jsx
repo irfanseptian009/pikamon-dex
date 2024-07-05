@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import FavoriteCard from "../components/FavoriteCard";
-import { IoIosHome } from "react-icons/io";
+import { IoMdArrowBack } from "react-icons/io";
 
 function FavoritePage() {
   const [favorites, setFavorites] = useState([]);
@@ -56,12 +56,12 @@ function FavoritePage() {
   return (
     <div className="container mx-auto p-4">
       <Link to="/">
-        <button className="bg-blue-900 hover:bg-blue-700 text-white font-semibold py-1 px-2 rounded-md mb-3 flex">
-          <IoIosHome className="w-5 h-5" /> <p>Back Home</p>
+        <button className="button text-white font-semibold py-2 px-2 rounded-md mb-3 flex items-center gap-2">
+          <IoMdArrowBack className="w-5 h-5" /> <p> Back Home</p>
         </button>
       </Link>
 
-      <h1 className="text-2xl font-bold mb-4">Pokemon Favorit</h1>
+      <h1 className="text-3xl font-bold mb-4 text-center mt-4">Favorite Pokemon</h1>
 
       {error && <p className="text-red-500 mb-4">{error}</p>}
 
@@ -69,8 +69,13 @@ function FavoritePage() {
         type="search"
         value={searchTerm}
         onChange={handleSearch}
-        placeholder="Cari Pokemon favorit..."
-        className="w-full p-2 pl-10 text-sm text-gray-700"
+        placeholder="Search your favorite Pokemon..."
+        className="w-full p-2 pl-10 mt-6 text-sm text-gray-700 mb-6"
+        style={{
+          border: "1px solid #ccc",
+          borderRadius: "6px",
+          padding: "10px",
+        }}
       />
 
       {isLoading ? (

@@ -11,8 +11,6 @@ const NavBar = () => {
   };
 
   // 
-
-
   return (
     <nav className="p-6 rounded-lg mb-5" style={{background:"rgb(90, 64, 145)"}}>
       {" "}

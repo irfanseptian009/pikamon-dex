@@ -108,6 +108,11 @@
       }
       
 }
+
+.button {
+  background-color: rgb(90, 64, 145);
+}
+
 .button:hover {
     background-color: #320F7A !important;
     transition-duration: 300;
