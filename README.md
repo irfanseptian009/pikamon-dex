@@ -62,3 +62,9 @@ Demo:
 
 You can view a live demo of Pikamon-Dex at (https://pika-dex.netlify.app/).   
 
+![image](https://github.com/user-attachments/assets/86ad06f7-bc55-4a38-9f80-6e8484ba209e)
+
+![image](https://github.com/user-attachments/assets/ef7fec51-1e9c-4af8-bcda-97085abb5446)
+
+
+
